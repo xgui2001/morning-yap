@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning Brain Dump</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌅</text></svg>">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🌅 Morning Brain Dump</h1>
+            <p>Voice your thoughts, get organized</p>
+        </header>
+
+        <main class="main-content">
+            <div class="panels">
+                <!-- Left Panel: Conversation -->
+                <div class="panel conversation-panel">
+                    <div class="panel-header">
+                        <h2>💭 Conversation</h2>
+                        <div class="status-indicator" id="statusIndicator">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Ready</span>
+                        </div>
+                    </div>
+                    <div class="conversation-container" id="conversationContainer">
+                        <div class="welcome-message">
+                            <p>👋 Good morning! I'm here to help you organize your thoughts.</p>
+                            <p>Click the mic and start talking about your day...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel: Tasks & Schedule -->
+                <div class="panel tasks-panel">
+                    <div class="panel-header">
+                        <h2>📋 Your Day</h2>
+                        <button class="export-btn" id="exportBtn" title="Export your data">
+                            📤 Export
+                        </button>
+                    </div>
+                    
+                    <!-- Mood & Energy -->
+                    <div class="mood-section" id="moodSection" style="display: none;">
+                        <div class="mood-indicator">
+                            <span class="mood-label">Mood:</span>
+                            <span class="mood-value" id="moodValue">neutral</span>
+                        </div>
+                        <div class="energy-indicator">
+                            <span class="energy-label">Energy:</span>
+                            <span class="energy-value" id="energyValue">medium</span>
+                        </div>
+                    </div>
+
+                    <!-- Tasks -->
+                    <div class="tasks-section">
+                        <h3>📝 Tasks</h3>
+                        <div class="tasks-container" id="tasksContainer">
+                            <p class="empty-state">No tasks yet. Start talking to see your organized day!</p>
+                        </div>
+                    </div>
+
+                    <!-- Schedule -->
+                    <div class="schedule-section">
+                        <h3>⏰ Schedule</h3>
+                        <div class="schedule-container" id="scheduleContainer">
+                            <p class="empty-state">Your schedule will appear here as you talk.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mic Button -->
+            <div class="mic-section">
+                <button class="mic-button" id="micButton" title="Click to start recording">
+                    <div class="mic-icon">🎤</div>
+                    <div class="mic-pulse"></div>
+                </button>
+                <p class="mic-label" id="micLabel">Click to start your morning brain dump</p>
+                
+                <!-- Text input fallback -->
+                <div class="text-input-fallback" id="textInputFallback" style="display: none;">
+                    <textarea 
+                        id="textInput" 
+                        placeholder="Type your morning thoughts here... (fallback mode)"
+                        rows="3"
+                    ></textarea>
+                    <button id="sendTextBtn" class="send-text-btn">Send</button>
+                </div>
+                
+                <button id="toggleInputBtn" class="toggle-input-btn">
+                    📝 Switch to Text Input
+                </button>
+                <p class="input-note">🎤 Voice input powered by Whisper</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html> 
